@@ -198,3 +198,13 @@ class BasePage:
         except Exception as e:
             logger.error(f"Failed to switch to default content: {e}")
             return False
+
+    def switch_to_parent_frame(self):
+        """切换到父级frame"""
+        try:
+            self.driver.switch_to.parent_frame()
+            logger.info("Switched to parent frame")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to switch to parent frame: {e}")
+            return False
